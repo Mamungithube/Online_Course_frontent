@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Registration Form</title>
+  <meta name="viewport" content="width=device-width,
+      initial-scale=1.0" />
+  <link rel="stylesheet" href="registetion.css" />
+</head>
+
+<body>
+  <div class="header">
+  </div>
+
+  <section>
+    <div>
+      <div class="container">
+        <h1 class="form-title">Registration</h1>
+        <form onsubmit="handleRegister(event)" id="register-form" action="#">
+          <div class="main-user-info">
+            <div class="user-input-box">
+              <label for="FirstName">First Name</label>
+              <input type="text" id="FirstName" name="FirstName" placeholder="Enter First Name" />
+            </div>
+            <div class="user-input-box">
+              <label for="LastName">Last Name</label>
+              <input type="text" id="LastName" name="LastName" placeholder="Enter Last Name" />
+            </div>
+            <div class="user-input-box">
+              <label for="username">Username</label>
+              <input type="text" id="username" name="username" placeholder="Enter Username" />
+            </div>
+
+            <div class="user-input-box">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" placeholder="Enter Email" />
+            </div>
+
+            <div class="user-input-box">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" placeholder="Enter Password" />
+            </div>
+            <div class="user-input-box">
+              <label for="confirmPassword">Confirm Password</label>
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" />
+            </div>
+            <br>
+            <div class="login">
+              <p>have an account. <a href="login.html">sign in</a></p>
+            </div>
+          </div>
+      </div>
+      <div class="form-submit-btn">
+        <input type="submit" value="Register">
+      </div>
+
+      </form>
+    </div>
+    </div>
+  </section>
+  <script src="auth.js"></script>
+</body>
+
+</html>
