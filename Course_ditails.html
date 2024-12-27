@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,7 +55,7 @@
         }
 
         .button {
-            background-color: #049898;
+            background-color:  #049898;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -134,48 +136,44 @@
                     document.getElementById("course-duration").textContent = `${course.month} Month`;
                     document.getElementById("course-fee").textContent = course.Course_fee;
                     document.getElementById("course-description").textContent = course.description;
-                    // document.getElementById("course-image").src = course.image;
-                    const imageUrl = `https://online-course-rose.vercel.app${course.image}`;
-                    document.getElementById("course-image").src = imageUrl;
-
+                    document.getElementById("course-image").src = `https://online-course-rose.vercel.app${course.image}`;
                 })
                 .catch(error => console.error("Error fetching data:", error));
-            console.log(course.image);
         });
 
         // list
 
         document.addEventListener("DOMContentLoaded", () => {
-            const urlParams = new URLSearchParams(window.location.search); // Initialize urlParams
-            const courseId = urlParams.get("id"); // Get the course ID from URL
-            const token = localStorage.getItem("authToken");
+    const urlParams = new URLSearchParams(window.location.search); // Initialize urlParams
+    const courseId = urlParams.get("id"); // Get the course ID from URL
+    const token = localStorage.getItem("authToken");
 
-            // Add event listener to the Enroll button
+    // Add event listener to the Enroll button
 
-            document.getElementById("enroll-now").addEventListener("click", () => {
-                console.log(JSON.stringify({ detail: courseId }));
-                fetch("https://online-course-rose.vercel.app/Course/enrolled-courses/", {
-                    method: "POST",  // Make sure POST method is used
-                    headers: {
-                        "Authorization": `Token ${token}`,
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ course: courseId })
-                })
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`HTTP error! Status: ${response.status}`);
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        alert("Enrolled successfully!");
-                    })
-                    .catch(error => {
-                        console.error("Error enrolling:", error);
-                    });
-            });
+    document.getElementById("enroll-now").addEventListener("click", () => {
+        console.log(JSON.stringify({ detail: courseId }));
+        fetch("https://online-course-rose.vercel.app/Course/enrolled-courses/", {
+            method: "POST",  // Make sure POST method is used
+            headers: {
+                "Authorization": `Token ${token}`,
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ course: courseId }) 
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            alert("Enrolled successfully!");
+        })
+        .catch(error => {
+            console.error("Error enrolling:", error);
         });
+    });
+});
 
 
     </script>
