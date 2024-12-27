@@ -14,7 +14,7 @@ const handleRegister = (event) => {
 
   console.log("Registration data", registerData);
 
-  fetch("http://127.0.0.1:8000/Student/register/", {
+  fetch("https://online-course-rose.vercel.app/Student/register/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -45,7 +45,7 @@ const handleLogin = (event) => {
     password: formData.get("password"),
   };
 
-  fetch("http://127.0.0.1:8000/Student/login/", {
+  fetch("https://online-course-rose.vercel.app/Student/login/", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -105,7 +105,7 @@ const handleLogout = (event) => {
   const token = localStorage.getItem("authToken");
   console.log(token);
 
-  fetch("http://127.0.0.1:8000/Student/logout/", {
+  fetch("https://online-course-rose.vercel.app/Student/logout/", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -131,7 +131,7 @@ const token = localStorage.getItem('authToken');
 if (!token) {
     console.log("not found token in local");
 } else {
-    fetch('http://127.0.0.1:8000/Student/api/profile/', {
+    fetch('https://online-course-rose.vercel.app/Student/api/profile/', {
         method: 'GET',
         headers: {
             'Authorization': `Token ${token}`,

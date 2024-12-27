@@ -1,7 +1,7 @@
 let coursesData = []; // Store courses globally for filtering
 
 const fetchAndDisplayCourses = () => {
-  fetch("http://127.0.0.1:8000/Course/list/")
+  fetch("https://online-course-rose.vercel.app/Course/list/")
     .then((res) => {
       if (!res.ok) {
         throw new Error(`HTTP error! Status: ${res.status}`);

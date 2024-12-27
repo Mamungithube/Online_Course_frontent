@@ -8,7 +8,7 @@ fetch("navbar.html")
     const token = localStorage.getItem("authToken");
 
     if (token) {
-      fetch("http://127.0.0.1:8000/Student/admins/", {
+      fetch("https://online-course-rose.vercel.app/Student/admins/", {
         method: "GET",
         headers: {
           "Content-Type": "application/json",

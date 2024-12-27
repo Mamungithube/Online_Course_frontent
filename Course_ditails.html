@@ -1,123 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Details</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-
-        .course-details {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .course-header h1 {
-            color: #333;
-            font-size: 2rem;
-        }
-
-        .course-content {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-around;
-        }
-
-        .course-content img {
-            max-width: 300px;
-            border-radius: 10px;
-        }
-
-        .course-info {
-            max-width: 400px;
-            text-align: left;
-        }
-
-        .button {
-            background-color: #007bff;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .button:hover {
-            background-color: #0056b3;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="course-details">
-        <div class="course-header">
-            <h1 class="course-title">Course Details</h1>
-            <p id="course-name">
-
-            </p>
-            <p id="course-duration"></p>
-        </div>
-        <div class="course-content">
-            <img id="course-image" alt="Course Image">
-            <div class="course-info">
-                <p><strong>Course Fee:</strong> <span id="course-fee"></span> Taka</p>
-                <p><strong>Description:</strong> <span id="course-description"></span></p>
-                <button id="enroll-now" class="button">Enroll Now</button>
-            </div>
-        </div>
-    </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const courseId = urlParams.get("id");
-
-    // Check if courseId exists
-    if (!courseId) {
-        console.error("No course ID found in URL");
-        return;
-    }
-
-    const token = localStorage.getItem("authToken");
-    fetch(`http://127.0.0.1:8000/Course/Course/${courseId}/`, {
-        headers: {
-            'Authorization': `token ${token}`
-        }
-    })
-    .then(response => {
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json();
-    })
-    .then(course => {
-        document.getElementById("course-name").textContent = course.name;
-        document.getElementById("course-duration").textContent = `${course.month} Month`;
-        document.getElementById("course-fee").textContent = course.Course_fee;
-        document.getElementById("course-description").textContent = course.description;
-        document.getElementById("course-image").src = `http://127.0.0.1:8000${course.image}`;
-
-    })
-    .catch(error => console.error("Error fetching data:", error));
-});
-
-    </script>
-</body>
-
-</html> -->
-
-
-
-
-<!-- new disign -->
-
 
 
 <!DOCTYPE html>
@@ -126,6 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/image file/logo-removebg-preview.png" type="image/x-icon" />
     <title>Course Details</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
@@ -239,7 +120,7 @@
             }
 
             const token = localStorage.getItem("authToken");
-            fetch(`http://127.0.0.1:8000/Course/Course/${courseId}/`, {
+            fetch(`https://online-course-rose.vercel.app/Course/Course/${courseId}/`, {
                 headers: {
                     'Authorization': `token ${token}`
                 }
@@ -255,7 +136,7 @@
                     document.getElementById("course-duration").textContent = `${course.month} Month`;
                     document.getElementById("course-fee").textContent = course.Course_fee;
                     document.getElementById("course-description").textContent = course.description;
-                    document.getElementById("course-image").src = `http://127.0.0.1:8000${course.image}`;
+                    document.getElementById("course-image").src = `https://online-course-rose.vercel.app${course.image}`;
                 })
                 .catch(error => console.error("Error fetching data:", error));
         });
@@ -271,7 +152,7 @@
 
     document.getElementById("enroll-now").addEventListener("click", () => {
         console.log(JSON.stringify({ detail: courseId }));
-        fetch("http://127.0.0.1:8000/Course/enrolled-courses/", {
+        fetch("https://online-course-rose.vercel.app/Course/enrolled-courses/", {
             method: "POST",  // Make sure POST method is used
             headers: {
                 "Authorization": `Token ${token}`,

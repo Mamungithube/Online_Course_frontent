@@ -1,6 +1,6 @@
 async function fetchReviews() {
     try {
-        const response = await fetch('http://127.0.0.1:8000/Teacher/reviews/');
+        const response = await fetch('https://online-course-rose.vercel.app/Teacher/reviews/');
         console.log("Fetching reviews...");
 
         if (!response.ok) {

@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/image file/logo-removebg-preview.png" type="image/x-icon" />
     <title>Edit Course</title>
     <style>
         body {
@@ -96,7 +97,7 @@
 
     <script>
         const fetchAndDisplayCourses = () => {
-            fetch("http://127.0.0.1:8000/Course/list/")
+            fetch("https://online-course-rose.vercel.app/Course/list/")
                 .then((res) => {
                     if (!res.ok) {
                         throw new Error(`HTTP error! Status: ${res.status}`);
@@ -173,7 +174,7 @@
                 console.error("Invalid Course ID:", courseId);
                 return;
             }
-            fetch(`http://127.0.0.1:8000/Course/list/${courseId}/`)
+            fetch(`https://online-course-rose.vercel.app/Course/list/${courseId}/`)
                 .then((res) => {
                     if (!res.ok) {
                         throw new Error(`HTTP error! Status: ${res.status}`);
@@ -203,7 +204,7 @@
             const form = document.getElementById("editCourseForm");
             const formData = new FormData(form);
 
-            fetch(`http://127.0.0.1:8000/Course/list/${currentCourseId}/`, {
+            fetch(`https://online-course-rose.vercel.app/Course/list/${currentCourseId}/`, {
                 method: "PUT",
                 body: formData,
                 // Don't set Content-Type header, let the browser set it with the boundary for multipart/form-data
@@ -233,7 +234,7 @@
         // Delete Course Functionality
         const deleteCourse = (courseId) => {
             if (confirm("Are you sure you want to delete this course?")) {
-                fetch(`http://127.0.0.1:8000/Course/list/${courseId}/`, {
+                fetch(`https://online-course-rose.vercel.app/Course/list/${courseId}/`, {
                     method: "DELETE",
                     headers: {
                         // Add token if required

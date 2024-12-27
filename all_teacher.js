@@ -1,6 +1,6 @@
 async function fetchTeacherList() {
     try {
-        const response = await fetch("http://127.0.0.1:8000/Teacher/list/");
+        const response = await fetch("https://online-course-rose.vercel.app/Teacher/list/");
 
         if (!response.ok) {
             throw new Error(`Failed to fetch the teacher list: ${response.statusText}`);

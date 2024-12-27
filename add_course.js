@@ -30,7 +30,7 @@ const addCourse = async (event) => {
             formData.set("image", imageURL);
 
             // Submit the updated form data to your server
-            const response = await fetch("http://127.0.0.1:8000/Course/list/", {
+            const response = await fetch("https://online-course-rose.vercel.app/Course/list/", {
                 method: "POST",
                 body: formData,
             });
