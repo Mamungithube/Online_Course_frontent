@@ -31,7 +31,7 @@ fetch("navbar.html")
             <a class="nav-link" href="All_teacher.html">All Teacher</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="About.html">About</a>
+            <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="Contect_us.html">Contact Us</a>

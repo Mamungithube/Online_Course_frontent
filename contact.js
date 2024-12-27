@@ -12,7 +12,7 @@ function addContact(event) {
         message: message
     };
 
-    fetch('https://vaccine-pi.vercel.app/contact/', {
+    fetch('https://online-course-rose.vercel.app/ContactUs/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
