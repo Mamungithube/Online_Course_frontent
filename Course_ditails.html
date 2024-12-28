@@ -136,7 +136,9 @@
                     document.getElementById("course-duration").textContent = `${course.month} Month`;
                     document.getElementById("course-fee").textContent = course.Course_fee;
                     document.getElementById("course-description").textContent = course.description;
-                    document.getElementById("course-image").src = `https://online-course-rose.vercel.app${course.image}`;
+                    console.log(`Image URL: ${course.image}`);
+                    console.log(course);
+                    document.getElementById("course-image").src = `${course.image}`;
                 })
                 .catch(error => console.error("Error fetching data:", error));
         });
