@@ -25,7 +25,7 @@ const handleRegister = (event) => {
       alert(
         "Registration Successful. Please check your email for a confirmation."
       );
-      window.location.href = "./login.html";
+      window.location.href = "./check_mail.html";
     })
     .catch((error) => console.log("Registration Error", error));
 };
