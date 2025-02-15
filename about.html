@@ -14,6 +14,9 @@
 </head>
 <body>
     <style>
+        .body{
+            color: #ffffff;
+        }
         .col {
             flex: 1 0 30%;
             margin: 0.5rem;
@@ -39,12 +42,8 @@
         .custom-title {
             color: #db9334;
             font-weight: bold;
-            background-color: #fcfdfd;
             padding: 15px 20px;
-            display: inline-block;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-            transition: color 0.3s, transform 0.3s;
         }
 
         .custom-title:hover {
@@ -78,8 +77,8 @@
         }
 
         .team-member {
-            background-color: #a54040;
-            color: white;
+            background-color: #ffffff;
+            color: black;
             padding: 20px;
             margin: 15px;
             border-radius: 8px;
@@ -90,8 +89,8 @@
 
         .team-member img {
             border-radius: 50%;
-            width: 100px;
-            height: 100px;
+            width: 200px;
+            height: 200px;
         }
 
         .Btn:hover {
@@ -117,82 +116,42 @@
             transform: translate(2px, 2px);
         }
     </style>
-    <header>
-        <nav class="navbar navbar-expand-lg sticky-top">
-            <div class="container-fluid">
-                <img class="logo" src="image file/logo-removebg-preview.png" alt="Logo" class="navbar-brand">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active text-secondary" aria-current="page" href="index.html">
-                                <i class="fas fa-home"></i> Home
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="All_Course.html">All Course</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="All_teacher.html">All Teacher</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="About.html">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="Contect_us.html">Contact Us</a>
-                        </li>
-                    </ul>
-                    <div class="auth" id="auth">
-
-                    </div>
-                    <form class="d-flex justify-content-evenly gap-4 me-3" role="search">
-                </div>
-            </div>
-        </nav>
-
-    </header>
+    <div id="navbar"></div>
+    <script src="navbar.js"></script>
     <main>
         <div class="container">
-            <h1 class="text-center">About Us</h1>
-            <h5>Welcome to Online School. We are dedicated to providing high-quality educational resources and
+            <h1 class="custom-title">About Us</h1><br>
+            <h5 class="text-dark">Welcome to Online School. We are dedicated to providing high-quality educational resources and
                 support to our students. Our mission is to empower learners through innovative and engaging online
-                courses.</h5>
-            <h2>Our Mission</h2>
-            <h5>At Online School, we believe that education should be accessible to everyone. Our goal is to
+                courses.</h5><br>
+            <h2 class="custom-title">Our Mission</h2><br>
+            <h5 class="text-dark">At Online School, we believe that education should be accessible to everyone. Our goal is to
                 create
                 a learning environment that fosters growth, creativity, and success. Lorem ipsum dolor sit amet
                 consectetur adipisicing elit. In eaque nisi saepe non ad beatae facere tempore accusantium numquam nemo?
-            </h5>
-
-            <b><u>
-                    <h2 style="padding: 10px;">Our Team</h2>
-                </u></b>
-
+            </h5><br>
+            <h2 class="custom-title">Our Team</h2>
             <div class="team-container d-flex justify-content-center flex-wrap">
                 <div class="team-member text-center">
-                    <img src="image file/shahab_uddin.jpg" alt="Team Member 1">
+                    <img class="m-4" src="image file/ceo.jpg" alt="Team Member 1">
                     <h3>Engr. Md. Shahab Uddin</h3>
                     <p>Founder & CEO</p>
                     <p><i class="fas fa-envelope"></i> shahab_uddin@gmail.com</p>
                 </div>
                 <div class="team-member text-center">
-                    <img src="image file/mamun pic.jpeg" alt="Team Member 2">
+                    <img class="m-4" src="image file/mamun pic.jpeg" alt="Team Member 2">
                     <h3>Md Mamun</h3>
                     <p>Chief Operating Officer</p>
                     <p><i class="fas fa-envelope"></i> Mamun@gmail.com</p>
                 </div>
                 <div class="team-member text-center">
-                    <img src="image file/Head of marketing.jpg" alt="Team Member 3">
+                    <img class="m-4" src="image file/Head of marketing.jpg" alt="Team Member 3">
                     <h3>Emily Johnson</h3>
                     <p>Head of Marketing</p>
                     <p><i class="fas fa-envelope"></i> emilyjohnson@example.com</p>
                 </div>
             </div>
-        </div>
+        </div><br><br>
     </main>
     <div id="footer"></div>
 <script src="footer.js"></script>

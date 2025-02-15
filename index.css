@@ -1,10 +1,9 @@
 body {
-    background-color: #aab3b3;
-    background-image: url('./image file/header.jpg');
+    background-color: #ffffff;
+    /* background-image: url('./image file/header.jpg'); */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    height: 100px;
 }
 
 .auth {
@@ -14,8 +13,22 @@ body {
     list-style-type: none;
 
 }
+.bennar{
+    background-color: #fef9f3;
+}
+.container-banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+    padding: 2% 5%;
+}
 
-/* From Uiverse.io by vinodjangid07 */
+.parent-container img {
+    width: 400px;
+    height: 300px;
+}
+
 .Btn {
     display: flex;
     align-items: center;
@@ -32,7 +45,6 @@ body {
     background-color: rgb(255, 65, 65);
 }
 
-/* plus sign */
 .sign {
     width: 100%;
     transition-duration: .3s;
@@ -123,32 +135,17 @@ body {
     }
 }
 
+.navbar-nav .nav-link:hover {
+    color: #f5a623;
+}
 .navbar {
-    color: #13b152;
     margin: 30px;
-    background: #eae0e0;
+    background: #fef9f3;
     box-shadow: 10px 10px 5px rgba(133, 110, 110, 0.5);
     padding: 10px 20px;
     border-radius: 8px;
     transition: background-color 0.5s, box-shadow 0.5s;
 }
-
-.navbar:hover {
-    background: rgb(207, 207, 212);
-    box-shadow: 12px 12px 7px rgba(255, 255, 255, 0.5);
-}
-
-.navbar .nav-link {
-    color: #707070;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.navbar .nav-link:hover {
-    color: #9a2727;
-    transform: scale(1.05);
-}
-
-/* About section styles */
 .About-contener {
     padding: 20px;
 }
@@ -158,13 +155,11 @@ body {
     flex-wrap: wrap;
     gap: 1rem;
 }
-
 .col {
     flex: 1 0 30%;
     margin: 0.5rem;
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
-    /* Prevent overflow */
 }
 
 .col:hover {
@@ -184,21 +179,10 @@ body {
 
 .custom-title {
     color: #db9334;
+    text-align: center;
     font-weight: bold;
-    background-color: #fcfdfd;
-    padding: 15px 20px;
-    display: inline-block;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    transition: color 0.3s, transform 0.3s;
+    padding: 30px;
 }
-
-.custom-title:hover {
-    color: #f9a825;
-    transform: scale(1.05);
-}
-
-
 
 .row,
 .col {
@@ -235,16 +219,16 @@ body {
 }
 
 .enroll {
-    background-color: #049898;
+    background-color: #db9334;
     color: white;
     padding: 8px 20px;
     border-radius: 9px;
     cursor: pointer;
     transition: background-color 0.3s;
     text-decoration: none;
-
 }
-.enroll:hover{
+
+.enroll:hover {
     text-decoration: none;
     color: rgb(247, 247, 255);
 }
@@ -258,7 +242,7 @@ body {
 
 .gallery-card img {
     width: 100%;
-    height: 260px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -282,11 +266,6 @@ body {
     transition: opacity 0.3s ease-in-out;
 }
 
-.gallery-card:hover .overlay {
-    opacity: 1;
-    /* Fade in the overlay on hover */
-}
-
 .card-img-top {
     transition: transform 0.3s ease-in-out;
 }
@@ -296,6 +275,11 @@ body {
     /* Slightly zoom the image on hover */
 }
 
+.button-right {
+    text-align: right; 
+    margin-right: 50px;
+}
+
 .more-button a {
     text-decoration: none;
     color: black;
@@ -303,9 +287,10 @@ body {
 
 .parent-container {
     display: flex;
+    height: 250px;
+    left: 250px;
     justify-content: end;
-    /* Horizontally center */
-    align-items: end;
+    padding-bottom: 50px;
     padding-right: 10%;
 }
 
@@ -314,7 +299,7 @@ body {
     width: 150px;
     height: 50px;
     border-radius: 10px;
-    border: 1px solid #03045e;
+    border: 1px solid black;
     position: relative;
     overflow: hidden;
     transition: all 0.5s ease-in;
@@ -336,12 +321,12 @@ body {
 
 .more-button::before {
     left: -10px;
-    background: #240046;
+    background: #F0BB78;
 }
 
 .more-button::after {
     right: -10px;
-    background: #5a189a;
+    background: #F0BB78;
 }
 
 .more-button:hover::before,
@@ -350,17 +335,10 @@ body {
 }
 
 .more-button:hover span {
-    color: #e0aaff;
+    color: black;
     transition: 0.3s;
 }
 
-.more-button a {
-    color: #03045e;
-    font-size: 18px;
-    transition: all 0.3s ease-in;
-    text-decoration: none;
-    /* Removes underline */
-}
 
 #reviews-carousel {
     margin: 50px auto;
@@ -394,17 +372,12 @@ body {
     justify-content: center;
     align-items: center;
     height: 180px;
-    /* Set height for carousel items */
     transition: transform 0.5s ease-in-out;
-    /* Transition effect for sliding */
 }
 
-/* Animation keyframes */
 @keyframes fadeInUp {
     to {
         opacity: 1;
-        /* End fully visible */
         transform: translateY(0);
-        /* Move to original position */
     }
 }

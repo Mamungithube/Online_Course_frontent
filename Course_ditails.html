@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/image file/logo-removebg-preview.png" type="image/x-icon" />
     <title>Course Details</title>
+    <link rel="stylesheet" href="navbar.css">
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
@@ -55,7 +54,7 @@
         }
 
         .button {
-            background-color:  #049898;
+            background-color: #db9334;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -85,24 +84,27 @@
 </head>
 
 <body>
+    <header>
+        <div id="navbar"></div>
+        <script src="navbar.js"></script>
+    </header>
     <div class="container my-5">
         <div class="course-details">
             <div class="course-header text-center">
                 <h1 class="course-title">Course Details</h1>
-                <p id="course-name" class="text-primary font-weight-bold"></p>
-                <p id="course-duration" class="text-secondary"></p>
+                <h2 id="course-name" class="font-weight-bold"></h2>
+                <h3 id="course-duration"></h3>
             </div>
             <div class="course-content">
                 <img id="course-image" alt="Course Image" class="img-fluid shadow-sm">
                 <div class="course-info">
-                    <p><strong>Course Fee:</strong> <span id="course-fee"></span> Taka</p>
+                    <h3><strong>Course Fee:</strong> <span id="course-fee"></span> Taka</h3>
                     <p><strong>Description:</strong> <span id="course-description"></span></p>
-                    <button id="enroll-now" class="button btn btn-primary btn-lg" type="submit">Enroll Now</button>
+                    <button id="enroll-now" class="button btn-lg" type="submit">Enroll Now</button>
                 </div>
             </div>
         </div>
     </div>
-
     <!-- Bootstrap JS and dependencies -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.6/dist/umd/popper.min.js"></script>
@@ -146,39 +148,41 @@
         // list
 
         document.addEventListener("DOMContentLoaded", () => {
-    const urlParams = new URLSearchParams(window.location.search); // Initialize urlParams
-    const courseId = urlParams.get("id"); // Get the course ID from URL
-    const token = localStorage.getItem("authToken");
+            const urlParams = new URLSearchParams(window.location.search); // Initialize urlParams
+            const courseId = urlParams.get("id"); // Get the course ID from URL
+            const token = localStorage.getItem("authToken");
 
-    // Add event listener to the Enroll button
+            // Add event listener to the Enroll button
 
-    document.getElementById("enroll-now").addEventListener("click", () => {
-        console.log(JSON.stringify({ detail: courseId }));
-        fetch("https://online-course-rose.vercel.app/Course/enrolled-courses/", {
-            method: "POST",  // Make sure POST method is used
-            headers: {
-                "Authorization": `Token ${token}`,
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({ course: courseId }) 
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            alert("Enrolled successfully!");
-        })
-        .catch(error => {
-            console.error("Error enrolling:", error);
+            document.getElementById("enroll-now").addEventListener("click", () => {
+                console.log(JSON.stringify({ detail: courseId }));
+                fetch("https://online-course-rose.vercel.app/Course/enrolled-courses/", {
+                    method: "POST",  // Make sure POST method is used
+                    headers: {
+                        "Authorization": `Token ${token}`,
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({ course: courseId })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! Status: ${response.status}`);
+                        }
+                        return response.json();
+                    })
+                    .then(data => {
+                        alert("Enrolled successfully!");
+                    })
+                    .catch(error => {
+                        console.error("Error enrolling:", error);
+                    });
+            });
         });
-    });
-});
 
 
     </script>
+    <div id="footer"></div>
+    <script src="footer.js"></script>
 </body>
 
 </html>

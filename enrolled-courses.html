@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/image file/logo-removebg-preview.png" type="image/x-icon" />
     <title>Enrolled Courses</title>
+    <link rel="stylesheet" href="navbar.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 
 <body>
+    <header>
+        <div id="navbar"></div>
+        <script src="navbar.js"></script>
+    </header>
     <div class="container my-5">
         <h2 class="text-center">My Enrolled Courses</h2>
         <table class="table table-bordered table-striped mt-4">
@@ -19,12 +26,14 @@
                     <th>Month Duration</th>
                     <th>Course Fee</th>
                     <th class="text-center">Description</th>
+                    <th>Enrolled</th>
                 </tr>
             </thead>
             <tbody id="course-list"></tbody>
         </table>
     </div>
-
+    <div id="footer"></div>
+    <script src="footer.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const token = localStorage.getItem("authToken");
@@ -53,7 +62,8 @@
                 <td>${course.name}</td>
                 <td>${course.month} Month</td>
                 <td>${course.Course_fee}</td>
-                <td>${course.description}</td>
+                <td>${course.description.slice(0, 200)}</td>
+                <td><i class="fa-solid fa-check-circle text-success"></i></td>
             `;
                         courseList.appendChild(row);
                     });
@@ -62,6 +72,7 @@
         });
 
     </script>
+    
 </body>
 
 </html>

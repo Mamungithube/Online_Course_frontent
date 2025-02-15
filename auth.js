@@ -74,31 +74,6 @@ const handleLogin = (event) => {
 };
 
 
-// const navelement = document.getElementById('auth');
-
-// const token = localStorage.getItem('authToken');
-// console.log(token);
-// if (token) {
-//   navelement.innerHTML += `
-// <li class="">
-//   <h5><a class="nav-link" href="index.html" onclick="handleLogout(event)">Logout</a></h5>
-// </li>
-// <li class="">
-//   <h5><a class="nav-link" href="Teacher_deshboard.html">profile</a></h5>
-// </li>
-// `
-// }
-// else {
-//   navelement.innerHTML += `
-// <li class="login">
-//   <h5><a class="nav-link" href="login.html">sign in</a></h5>
-// </li>
-// <li class="nav-item">
-//     <h5><a class="nav-link" href="registetion.html">sign up</a></h5>
-// </li>
-// `
-// }
-
 
 const handleLogout = (event) => {
   event.preventDefault();

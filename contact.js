@@ -1,43 +1,46 @@
 
 function addContact(event) {
-    event.preventDefault(); 
+    event.preventDefault(); // ফর্ম সাবমিট বন্ধ করা
 
-    const name = document.querySelector('input[placeholder="Your Name"]').value;
-    const email = document.querySelector('input[placeholder="Your Email"]').value;
-    const message = document.querySelector('textarea[placeholder="Message"]').value;
+    const name = document.querySelector('input[name="name"]').value.trim();
+    const email = document.querySelector('input[name="email"]').value.trim();
+    const message = document.querySelector('textarea[name="message"]').value.trim();
+
+    // ফিল্ড খালি থাকলে সাবমিট না করা
+    if (!name || !email || !message) {
+        document.getElementById('con-message').textContent = "All fields are required.";
+        document.getElementById('con-message').style.color = "red";
+        return;
+    }
 
     const data = {
         name: name,
         email: email,
-        message: message
+        problem: message
     };
 
     fetch('https://online-course-rose.vercel.app/ContactUs/', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error('Network response was not ok');
+            return response.json().then(err => { throw new Error(JSON.stringify(err)); });
         }
         return response.json();
     })
     .then(data => {
-        // Display success message
-        console.log(data);
-        document.getElementById('con-message').textContent = "Thank you for your message! We'll get back to you soon.";
+        console.log("Success:", data);
+        document.getElementById('con-message').textContent = "Thank you! Your message has been sent.";
         document.getElementById('con-message').style.color = "green";
-
-        // Clear form fields
-        document.getElementById('contact-form').reset();
+        document.getElementById('contact-form').reset(); // ফর্ম খালি করা
     })
     .catch((error) => {
-        // Display error message
-        document.getElementById('con-message').textContent = "There was a problem submitting your message. Please try again later.";
-        document.getElementById('con-message').style.color = "red";
         console.error('Error:', error);
+        document.getElementById('con-message').textContent = "Submission failed. Check console for details.";
+        document.getElementById('con-message').style.color = "red";
     });
 }
