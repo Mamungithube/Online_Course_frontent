@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/image file/logo-removebg-preview.png" type="image/x-icon" />
     <title>Add Course</title>
+    <link rel="stylesheet" href="index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body{
-            background-color: #c4bfbf;
+            background-color: #f8f9fa;
             font-family: 'Arial', sans-serif;
             color: #333;
         }
@@ -21,11 +22,11 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-        .course-form-container h3 {
+        /* .course-form-container h3 {
             text-align: center;
             color: #4CAF50;
             margin-bottom: 20px;
-        }
+        } */
         .form-label {
             font-weight: bold;
             color: #555;
@@ -36,34 +37,16 @@
             margin-bottom: 20px;
             padding: 10px;
         }
-        .form-control:focus {
-            border-color: #4CAF50;
-            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
-        }
         .form-control-file {
             margin-bottom: 20px;
-        }
-        .submit-btn {
-            background-color:  #049898;
-            color: white;
-            border: none;
-            padding: 12px 30px;
-            border-radius: 25px;
-            font-size: 16px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .submit-btn:hover {
-            background-color: #45a049;
-        }
-        .submit-btn:focus {
-            outline: none;
         }
     </style>
 </head>
 <body>
+    <div id="navbar"></div>
+    <script src="./js file/navbar.js"></script>
     <div class="container course-form-container">
-        <h3>Add a New Course</h3>
+        <h3 class="text-warning text-center mb-5">Add a New Course</h3>
         <form id="addCourseForm" >
             <div class="mb-3">
                 <label for="name" class="form-label">Course Name</label>
@@ -95,13 +78,13 @@
             </div>
 
             <!-- Submit Button -->
-            <a href="index.html"><button onclick="addCourse(event)" type="submit" class="submit-btn">Add Course</button></a>
-            <a href="Edit_Course.html" type="submit" class="submit-btn mt-3 text-center" style="text-decoration: none;">Edit Course</a>
-            <a href="Edit_Course.html" type="submit" class="submit-btn mt-3 text-center" style="text-decoration: none;">Delete Course</a>
-
+            <a href="All_Course.html"><button onclick="addCourse(event)" type="submit" class="submit-btn btn btn-warning">Add Course</button></a>
+            <!-- <a href="Edit_Course.html" type="submit" class="submit-btn mt-3 text-center btn btn-outline-warning" style="text-decoration: none;">Edit Course</a> -->
+            <!-- <a href="Edit_Course.html" type="submit" class="submit-btn mt-3 text-center btn btn-outline-warning" style="text-decoration: none;">Delete Course</a> -->
         </form>
     </div>
-
+    <div id="footer"></div>
+    <script src="./js file/footer.js"></script>
     <script src="./js file/add_course.js"></script>
 </body>
 </html>
